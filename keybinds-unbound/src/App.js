@@ -1,22 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import {
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+
 
 function App() {
+
+  const testAtom = atom({
+    key: "something",
+    default: "value"
+  })
+
+  const aThing = useRecoilValue(testAtom)
+    
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          stuff and things {aThing}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
